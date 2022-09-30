@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-ui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: todo-app-ui
+  template:
+    metadata:
+      labels:
+        app: todo-app-ui
+    spec:
+      containers:
+      - image: https://quay.io/repository/siamaksade/todo-demo-app:latest
+        name: todo-app-ui
+        ports:
+        - containerPort: 80
