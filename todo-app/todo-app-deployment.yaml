@@ -14,7 +14,7 @@ spec:
         app: todo-app-ui
     spec:
       containers:
-      - image: https://quay.io/repository/siamaksade/todo-demo-app
+      - image: image-registry.openshift-image-registry.svc:5000/karthik/todo-demo-app
         name: todo-app-ui
         ports:
         - containerPort: 80
